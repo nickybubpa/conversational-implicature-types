@@ -47,8 +47,6 @@ Explain your model here how it works.
  - 300 question-answer pairs with three labels
 <br/><br/>
 
-![ดาวน์โหลด](https://user-images.githubusercontent.com/40376515/204923825-069bc2fb-5451-48be-8f95-80691b6ca117.png)
-
 | Label | Frequency | Percentage |
 |-------| --------- | ---------- |
 | YES | 102 | 34% |
