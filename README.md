@@ -52,6 +52,7 @@ Explain your model here how it works.
 | YES | 102 | 34% |
 | NO | 101 | 33.67% |
 | NEUTRAL | 97 | 32.33% |
+
 ![ดาวน์โหลด](https://user-images.githubusercontent.com/40376515/204923825-069bc2fb-5451-48be-8f95-80691b6ca117.png)
 
 Dataset examples:<br/>
