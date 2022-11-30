@@ -53,6 +53,9 @@ Explain your model here how it works.
 | NO | 101 | 33.67% |
 | NEUTRAL | 97 | 32.33% |
 
+Example:<br/>
+![image](https://user-images.githubusercontent.com/40376515/204923565-1395c530-cec3-49c5-a218-718a4d9f1668.png)
+
 <br/><br/>
 
 # Experiment setup
