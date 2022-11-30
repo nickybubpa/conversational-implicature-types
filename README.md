@@ -65,7 +65,7 @@ Baseline model: Logistic Regression<br/>
 
 Model 1 Bag-of-words (only answers) [unigram]<br/>
  Preprocessing:
- - Tokenizer: "uttacut" from library "pythainlp"
+ - Tokenizer: "uttacut" from library "pythainlp"<br/>
  Training:
  - Using DictVectorizer(sparse=True)
  - Using simple "LogisticRegression()"
@@ -73,20 +73,34 @@ Model 1 Bag-of-words (only answers) [unigram]<br/>
 Model 2 Bag-of-words (questions and answers) [bigram]<br/>
  Preprocessing:
  - Tokenizer: "uttacut" from library "pythainlp"
- - Removing stop words
+ - Removing stop words<br/>
  Training:
  - Using "CountVectorizer(ngram_range=(2, 2), max_features=800000)"
  - Using "LogisticRegression(C=0.1, dual=True, solver='liblinear', max_iter=10000)"
 
 The pre-trained models: BERT, WangchanBERTa<br/>
 
-Model 3 BERT (pre-trained model)<br/>
+Model 3 BERT<br/>
  Preprocessing:
- - Tokenizer: "bert-base-uncased"
- - 
- - Which pre-trained model? How did you pretrain embeddings?
- - Computer spec & how long?
- - Hyperparameter tuning? Dropout? How many epochs?
+ - Tokenizer: "bert-base-uncased"<br/>
+ Training:
+ - Epochs:
+ - Metric: accuracy<br/>
+ Hyperparameter tuning:
+ - Learning rate:
+ - Training batch size:
+ - Testing batch size: __ <br/>
+ 
+ Model 4 WangchanBERTa<br/>
+ Preprocessing:
+ - Tokenizer: "wangchanberta-base-att-spm-uncased"<br/>
+ Training:
+ - Epochs:
+ - Metric: accuracy<br/>
+ Hyperparameter tuning:
+ - Learning rate:
+ - Training batch size:
+ - Testing batch size:
 <br/><br/>
 
 # Results
