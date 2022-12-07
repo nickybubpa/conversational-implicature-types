@@ -22,7 +22,7 @@ In this paper, they introduce a dataset of dialogue snippets with three constitu
 # Approach / Methodology
  - Created a dialogue implicature dataset which includes question utterances manually collected from [TNC (Thai National Corpus)](https://www.arts.chula.ac.th/ling/tnc3/), and answer utterances manually generated.
  - Then annotated them manually with a definite/probable 'YES', 'NO', or 'NEUTRAL' for 300 indirect polar questions according to annotation guidelines.
- - Trained and tested ML models' performance with this dataset.
+ - Trained models and tested ML models' performance with this dataset.
  - Compared and analyzed the results.
 <br/><br/>
 
@@ -55,7 +55,7 @@ Dataset examples:<br/>
 ![image](https://user-images.githubusercontent.com/40376515/204923565-1395c530-cec3-49c5-a218-718a4d9f1668.png)
 <br/><br/>
 
-# Experiment setup
+# Experiment Setup
 All processes of implementation were developed on **Google Colab** (free version).
 <br/><br/>
 **Computer specs**<br/>
@@ -108,7 +108,7 @@ The results have shown that the Logistic Regression model with a bag-of-words of
 ![image](https://user-images.githubusercontent.com/40376515/206033418-db02a448-3bb4-4014-9bbe-3819ac80f715.png)
 <br/>
 
-# Model comparison
+# Model Comparison
 | Model | Precision | Recall | Accuracy | F1-score |
 | ----- | --------- | ------ | -------- | -------- |
 | Bag-of-words (only answers) | 0.47 | 0.50 | 0.47 | 0.48 |
