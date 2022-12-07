@@ -107,6 +107,8 @@ The results have shown that the Logistic Regression model with a bag-of-words of
  **Model 4 WangchanBERTa (with hyperparameter tuning)** [[6]](#6)<br/>
 ![image](https://user-images.githubusercontent.com/40376515/206033418-db02a448-3bb4-4014-9bbe-3819ac80f715.png)
 <br/>
+<a id="6">[6]</a>
+Label '0' is NEUTRAL, label '1' is YES, and label '2' is NO.<br/>
 
 # Model Comparison
 | Model | Precision | Recall | Accuracy | F1-score |
@@ -139,6 +141,4 @@ DOI: [10.1016/j.procs.2020.04.251](https://www.researchgate.net/publication/3419
 <a id="4">[4]</a>
 Vimal, Bhartendoo. (2020). Application of Logistic Regression in Natural Language Processing. *International Journal of Engineering Research and Technical Research*. V9. DOI: [10.17577/IJERTV9IS060095](https://www.researchgate.net/publication/342075482_Application_of_Logistic_Regression_in_Natural_Language_Processing)<br/>
 <a id="5">[5]</a>
-Lowphansirikul, L., Polpanumas, C., Jantrakulchai, N., & Nutanong, S. (2021). Wangchanberta: Pretraining transformer-based thai language models. *[arXiv preprint arXiv:2101.09635](https://arxiv.org/abs/2101.09635)*.<br/>
-<a id="6">[6]</a>
-Label '0' is NEUTRAL, label '1' is YES, and label '2' is NO.
+Lowphansirikul, L., Polpanumas, C., Jantrakulchai, N., & Nutanong, S. (2021). Wangchanberta: Pretraining transformer-based thai language models. *[arXiv preprint arXiv:2101.09635](https://arxiv.org/abs/2101.09635)*.
