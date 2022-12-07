@@ -4,7 +4,7 @@ This project addresses the linguistic issues that arise in connection with annot
 
 # Introduction
  - Conversational implicature is the core topic of pragmatics, and it is also one of the difficult problems to be overcome in natural language processing. However, the research paths of conversational implicatures appear to be contradictory in pragmatics and computer science. In linguistic term, conversational implicature is the meaning of the speaker’s utterance that is not part of what is explicitly said. In human-computer interactions, the machine fails to understand the implicated meaning unless it is trained with a dataset containing the implicated meaning of an utterance along with the utterance and the context in which it is uttered.
- - In this project, I introduce a small dataset of question-answer pairs with response types, which are YES, NO, and NEUTRAL (no relations). These response types are the indicators of conversational implicatures.
+ - In this project, I introduce a small dataset of question-answer pairs with response types, which are 'YES', 'NO', and 'NEUTRAL' (no relations). These response types are the indicators of conversational implicatures.
  - In previous NLP works, there are some papers focused on dataset for recovering implicatures such as *GRICE: A Grammar-based Dataset for Recovering Implicature and Conversational rEasoning* [[1]](#1) which are not included the conversation of natural language yet, *Text Classification of Conversational Implicatures Based on Lexical Features* [[2]](#2), which shows that there is a statistical dependence between lexical features and conversational implicatures, and the text classification of implicatures can be performed only based on lexical features, and *Conversational implicatures in English dialogue: Annotated dataset* [[3]](#3). However, there are not many tasks focused on dataset for recovering conversational implicatures as well as text classification of conversational implicatures especially in Thai language. Therefore, measuring ML models' performance with Thai dialogue dataset has been reckoned as an interesting text classification task.
  - The objective of this project is to measure ML models' performance in predicting response types of conversational implicature and to analyze which model can outperform on this task.
  - The results have shown that the Logistic Regression model with a bag-of-words of both questions and answers performs the best for this task, and the baseline model's performance is still competitive with the pre-trained model, WangchanBERTa. It is probably because of very small dataset. The future work is to train more models to see more various results and create a larger dataset so that it fit in with many pre-trained models.
@@ -41,8 +41,8 @@ WangchanBERTa [[5]](#5) is a Thai language model based on RoBERTa-base architect
 # Dataset
  - [Annotation guidelines](https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:32f73871-7744-3a29-ace0-11ca0fca99a7)
  - [Raw dataset](https://docs.google.com/spreadsheets/d/1Ji2k0cT5RLNC6C2xYeZczRuN35PEP2QgbuUtwDdOB9o/edit?usp=sharing)
- - There are three parts of the dataset; "question", "answer", and "label".
- - It includes 300 question-answer pairs with three labels; "YES", "NO", and "NEUTRAL"
+ - There are three parts of the dataset; 'question', 'answer', and 'label'.
+ - It includes 300 question-answer pairs with three labels; 'YES', 'NO', and 'NEUTRAL'
 <br/><br/>
 
 | Label | Frequency | Percentage |
@@ -69,13 +69,13 @@ The dataset was split into train set: 240 pairs (80%), dev set: 30 pairs (10%), 
 
 **Model 1 Bag-of-words (only answers) [unigram]**<br/>
  - Created a bag-of-words from only answer utterances
- - Tokenizer: "uttacut" from library "pythainlp"
+ - Tokenizer: 'uttacut' from the library 'pythainlp'
  - Training with DictVectorizer
- - Simple "LogisticRegression()"
+ - Simple 'LogisticRegression()'
 
 **Model 2 Bag-of-words (questions and answers) [bigram]**<br/>
  - Created a bag-of-words from both question and answer utterances
- - Tokenizer: "uttacut" from library "pythainlp"
+ - Tokenizer: 'uttacut' from the library 'pythainlp'
  - Removing stop words
  - Training with CountVectorizer(ngram_range=(2, 2))
  - LogisticRegression(C=0.1, dual=True, solver='liblinear', max_iter=10000)
@@ -83,12 +83,12 @@ The dataset was split into train set: 240 pairs (80%), dev set: 30 pairs (10%), 
 <ins>Pre-trained model: WangchanBERTa</ins><br/>
 
 **Model 3 WangchanBERTa (without hyperparameter tuning)**<br/>
- - Tokenizer: "wangchanberta-base-att-spm-uncased"
+ - Tokenizer: 'wangchanberta-base-att-spm-uncased'
  - Format: [CLS] 'question' [SEP] 'answer' [SEP]
  - Training with pre-trained settings
 
 **Model 4 WangchanBERTa (with hyperparameter tuning)**<br/>
- - Tokenizer: "wangchanberta-base-att-spm-uncased"
+ - Tokenizer: 'wangchanberta-base-att-spm-uncased'
  - Format: [CLS] 'question' [SEP] 'answer' [SEP]
  - Epochs: 4
  - Learning rate: 2e-5
@@ -108,7 +108,7 @@ The results have shown that the Logistic Regression model with a bag-of-words of
 ![image](https://user-images.githubusercontent.com/40376515/206033418-db02a448-3bb4-4014-9bbe-3819ac80f715.png)
 <br/>
 <a id="6">[6]</a>
-Label '0' is NEUTRAL, label '1' is YES, and label '2' is NO.<br/>
+Label '0' is 'NEUTRAL', label '1' is 'YES', and label '2' is 'NO'.<br/>
 
 # Model Comparison
 | Model | Precision | Recall | Accuracy | F1-score |
@@ -120,7 +120,7 @@ Label '0' is NEUTRAL, label '1' is YES, and label '2' is NO.<br/>
 <br/>
 
 # Conclusions
-In this project, I present my approach to collect and annotate a small dataset of dialogues with implicatures associated with the response utterance. The collected dataset can be used as a reference for identifying andsynthesising conversational implicatures. The question utterances are manually collected from [TNC (Thai National Corpus)](https://www.arts.chula.ac.th/ling/tnc3/), and the answer utterances are manually generated by myself. As implicatures are generated in a wide range of situations and are highly dependent on the hearer’s understanding, I have primarily focused on the polar questions where an indirect answer without an explicit ‘Yes’ or ‘No’ generates implicatures, and questions with unrelated answers as well.<br/><br/>
+In this project, I present my approach to collect and annotate a small dataset of dialogues with implicatures associated with the response utterance. The collected dataset can be used as a reference for identifying and synthesising conversational implicatures. The question utterances are manually collected from [TNC (Thai National Corpus)](https://www.arts.chula.ac.th/ling/tnc3/), and the answer utterances are manually generated by myself. As implicatures are generated in a wide range of situations and are highly dependent on the hearer's understanding, I have primarily focused on the polar questions where an indirect answer without an explicit 'YES' or 'NO' generates implicatures, and questions with unrelated answers as well.<br/><br/>
 The results from models have shown that the Logistic Regression model with a bag-of-words of both questions and answers performs the best for this task, and the baseline model's performance is still competitive with the pre-trained model, WangchanBERTa. For a comparison within the same model, the WangchanBERTa without hyperparameter tuning outperforms the WangchanBERTa with hyperparameter tuning.<br/><br/>
 In the future, I am planning to add more question-answer pairs in various contexts and train other models to see more results.
 <br/><br/>
